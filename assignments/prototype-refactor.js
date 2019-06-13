@@ -31,21 +31,18 @@ class CharacterStats extends GameObject {
   }
 }
 
-
 // === Humanoid (Having an appearance or character resembling that of a human.) ===
-function Humanoid(att) {
-  CharacterStats.call(this, att);
-  this.team = att.team
-  this.weapons = att.weapons
-  this.language = att.language
+class Humanoid extends GameObject {
+  constructor(att) {
+    super(att);
+    this.team = att.team;
+    this.weapons = att.weapons;
+    this.language = att.language;
   }
-Object.prototype.greet = function () {
-  return `${this.name} offers a greeting in ${this.language}.`; // prototype method -> returns the string '<object name> offers a greeting in <object language>.'
-};
-  // * should inherit destroy() from GameObject through CharacterStats
-  // * should inherit takeDamage() from CharacterStats
-
-
+  greet() {
+    return `${this.name} offers a greeting in ${this.language}.`;
+  }
+}
 
   const mage = new Humanoid({
     createdAt: new Date(),
