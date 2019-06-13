@@ -33,7 +33,7 @@ class Student extends Person {   // Child Class
     this.favSubjects = studentInfo.favSubjects;
   }
   grade() {
-    console.log(Math.random()*100);
+    return Math.random()*100;
   }
   listsSubjects() {
     console.log(this.favSubjects);
