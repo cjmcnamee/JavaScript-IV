@@ -15,20 +15,22 @@ class GameObject {
     this.name = att.name;
     this.dimensions = att.dimensions;
   }
-    destroy() {
-      return `${this.name} was removed from game.`;
-    }
+  destroy() {
+    return `${this.name} was removed from game.`;
   }
+}
 
 // === CharacterStats ===
-function CharacterStats(att) {
-  GameObject.call(this, att);
-  this.healthPoints = att.healthPoints
+class CharacterStats extends GameObject {
+  constructor(att) {
+    super(att);
+    this.healthPoints = att.healthPoints;
   }
-Object.prototype.takeDamage = function () {
-  return `${this.name} took damage.`;  // prototype method -> returns the string '<object name> took damage.'
-};
-  // * should inherit destroy() from GameObject's prototype
+  takeDamage() {
+    return `${this.name} took damage.`;
+  }
+}
+
 
 // === Humanoid (Having an appearance or character resembling that of a human.) ===
 function Humanoid(att) {
