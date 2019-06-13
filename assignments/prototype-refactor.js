@@ -32,7 +32,7 @@ class CharacterStats extends GameObject {
 }
 
 // === Humanoid (Having an appearance or character resembling that of a human.) ===
-class Humanoid extends GameObject {
+class Humanoid extends CharacterStats {
   constructor(att) {
     super(att);
     this.team = att.team;
