@@ -32,6 +32,9 @@ class Student extends Person {   // Child Class
     this.className = studentInfo.className;
     this.favSubjects = studentInfo.favSubjects;
   }
+  grade() {
+    console.log(Math.random()*100);
+  }
   listsSubjects() {
     console.log(this.favSubjects);
   }
@@ -41,10 +44,17 @@ class Student extends Person {   // Child Class
   sprintChallenge(subject) {
     console.log(`${this.name} has begun sprint challenge on ${subject}`);
   }
+  graduate() {
+    if(this.grade() >= 70.0){
+      console.log(`${this.name} can graduate!`)
+    } else {
+      console.log(`${this.name} is a failure!`)
+    }
+  }
 }
 
 
-class ProjectManagers extends Instructor {   // Grandchild Class
+class ProjectManager extends Instructor {   // Grandchild Class
   constructor(pmInfo) {
     super(pmInfo);
     this.gradClassName = pmInfo.gradClassName;
@@ -53,8 +63,8 @@ class ProjectManagers extends Instructor {   // Grandchild Class
   standUp(channel) {
     console.log(`${this.name} announces to ${channel}`);
   }
-  debugsCode(subject) {
-    console.log(`${this.name} debugs ${student.name}'s code on ${subject}'`);
+  debugsCode(student, subject) {
+    console.log(`${this.name} debugs ${student}'s code on ${subject}`);
   }
 }
 
@@ -105,7 +115,7 @@ const pikachu = new ProjectManager ({
   favInstructor: 'Ash Ketchum'
 })
 
-const cinnamon = new ProjectManage ({
+const cinnamon = new ProjectManager ({
   name: 'Cinnamon Roll',
   location: 'Japan',
   age: '4.5 billion',
@@ -142,9 +152,10 @@ console.log(naruto.age);
 console.log(naruto.previousBackground);
 console.log(naruto.className);
 naruto.speak();
+naruto.grade();
 naruto.listsSubjects();
-naruto.PRAssignment('believeing');
-naruto.sprintChallenge('believing')
+naruto.PRAssignment('Believeing');
+naruto.sprintChallenge('Believing')
 
 console.log(connor.name);  // Student Connor console.logs
 console.log(connor.location);
@@ -152,6 +163,31 @@ console.log(connor.age);
 console.log(connor.previousBackground);
 console.log(connor.className);
 connor.speak();
+connor.graduate();
 connor.listsSubjects();
 connor.PRAssignment('JavaScript IV');
 connor.sprintChallenge('Intro to JavaScript')
+
+console.log(pikachu.name);  // Instructor Pikachu console.logs
+console.log(pikachu.location);
+console.log(pikachu.age);
+console.log(pikachu.favLanguage);
+console.log(pikachu.specialty);
+console.log(pikachu.catchPhrase);
+pikachu.speak();
+pikachu.demo('Battling');
+pikachu.grade('Battling');
+pikachu.standUp('Web21 Channel')
+pikachu.debugsCode(naruto.name, 'Believing')
+
+console.log(cinnamon.name);  // Instructor Cinnamon Roll console.logs
+console.log(cinnamon.location);
+console.log(cinnamon.age);
+console.log(cinnamon.favLanguage);
+console.log(cinnamon.specialty);
+console.log(cinnamon.catchPhrase);
+cinnamon.speak();
+cinnamon.demo('Eating');
+cinnamon.grade('Eating');
+cinnamon.standUp('Web21 Channel')
+cinnamon.debugsCode(connor.name, 'JavaScript IV')
