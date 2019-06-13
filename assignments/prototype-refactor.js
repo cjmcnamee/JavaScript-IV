@@ -9,14 +9,16 @@ Prototype Refactor
 */
 
 // === GameObject ===
-function GameObject(att) {
-  this.createdAt = Date();
-  this.name = att.name;
-  this.dimensions = att.dimensions // (These represent the character's size in the video game)
+class GameObject {
+  constructor(att) {
+    this.createdAt = Date();
+    this.name = att.name;
+    this.dimensions = att.dimensions;
   }
-Object.prototype.destroy = function () {
-  return `${this.name} was removed from game.`; // prototype method that returns: `${this.name} was removed from the game.`
-};
+    destroy() {
+      return `${this.name} was removed from game.`;
+    }
+  }
 
 // === CharacterStats ===
 function CharacterStats(att) {
