@@ -12,15 +12,21 @@ class Person {
 
 class Instructor extends Person {
   constructor(instructorInfo) {
-    super(instructor);
-    this.specialty = instructor.specialty;
-    this.favLanguage = instructor.favLanguage;
-    this.catchPhrase = instructor.catchPhrase;
+    super(instructorInfo);
+    this.specialty = instructorInfo.specialty;
+    this.favLanguage = instructorInfo.favLanguage;
+    this.catchPhrase = instructorInfo.catchPhrase;
   }
   demo(subject) {
-    console.log(`Today we are learning about {subject}`)
+    console.log(`Today we are learning about ${subject}`)
   }
-  grade() {
-    console.log(`{student} receives perfect score on {subject}`)
+  grade(student, subject) {
+    console.log(`${this.name} receives perfect score on ${subject}`)
+  }
+}
+
+class Student extends Person {
+  constructor(studentInfo) {
+    super(studentInfo);
   }
 }
