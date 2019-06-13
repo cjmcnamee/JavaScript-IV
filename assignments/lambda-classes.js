@@ -1,5 +1,5 @@
 // CODE here for your Lambda Classes
-class Person {
+class Person {    // Parent Class
   constructor(info) {
     this.name = info.name;
     this.age = info.age;
@@ -10,7 +10,7 @@ class Person {
   }
 }
 
-class Instructor extends Person {
+class Instructor extends Person {    // Child Class
   constructor(instructorInfo) {
     super(instructorInfo);
     this.specialty = instructorInfo.specialty;
@@ -25,8 +25,20 @@ class Instructor extends Person {
   }
 }
 
-class Student extends Person {
+class Student extends Person {   // Child Class
   constructor(studentInfo) {
     super(studentInfo);
+    this.previousBackground = studentInfo.previousBackground;
+    this.className = studentInfo.className;
+    this.favSubjects = studentInfo.favSubjects;
+  }
+  listsSubjects() {
+    console.log(this.favoriteSubjects);
+  }
+  PRAssignment(subject) {
+    console.log(`${student.name} has submitted a PR for ${subject}`)
+  }
+  sprintChallenge(subject) {
+    console.log(`${student.name} has begun spring challenge on ${subject}`)
   }
 }
