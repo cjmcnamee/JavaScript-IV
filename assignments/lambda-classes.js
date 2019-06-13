@@ -18,10 +18,10 @@ class Instructor extends Person {    // Child Class
     this.catchPhrase = instructorInfo.catchPhrase;
   }
   demo(subject) {
-    console.log(`Today we are learning about ${subject}`)
+    console.log(`Today we are learning about ${subject}`);
   }
   grade(student, subject) {
-    console.log(`${this.name} receives perfect score on ${subject}`)
+    console.log(`${this.name} receives perfect score on ${subject}`);
   }
 }
 
@@ -36,9 +36,24 @@ class Student extends Person {   // Child Class
     console.log(this.favoriteSubjects);
   }
   PRAssignment(subject) {
-    console.log(`${student.name} has submitted a PR for ${subject}`)
+    console.log(`${student.name} has submitted a PR for ${subject}`);
   }
   sprintChallenge(subject) {
-    console.log(`${student.name} has begun spring challenge on ${subject}`)
+    console.log(`${student.name} has begun spring challenge on ${subject}`);
+  }
+}
+
+
+class ProjectManagers extends Instructor {   // Grandchild Class
+  constructor(pmInfo) {
+    super(pmInfo);
+    this.gradClassName = pmInfo.gradClassName;
+    this.favInstructor = pmInfo.favInstructor;
+  }
+  standUp(channel) {
+    console.log(`${this.name} announces to ${channel}`);
+  }
+  debugsCode(subject) {
+    console.log(`${this.name} debugs ${student.name}'s code on ${subject}'`);
   }
 }
